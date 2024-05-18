@@ -1,0 +1,22 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "This is Rest API which will be used for AnnpurnaFood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravi19777/RestAPI.git"
+  },
+  "author": "Ravi Raushan Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravi19777/RestAPI/issues"
+  },
+  "homepage": "https://github.com/ravi19777/RestAPI#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
