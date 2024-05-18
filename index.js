@@ -3,7 +3,7 @@ import express from "express";
 const app = express();
 const PORT = 5000;
 
-app.all("/", (req, res) => {
+app.get("/", (req, res) => {
   console.log(`Request > ${req}`);
   console.log(`Response > ${res}`);
 
