@@ -15,7 +15,25 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  res.send("Please enter the details of restaurants to register it!!");
+  restaurants.push(req.body);
+  res.send(req.body);
+});
+
+app.put("/update/:id", (req, res) => {
+  const restroUpdatedData = req.body;
+  const restroId = req.params.id;
+  const restroIndex = restaurants.findIndex((restro) => restro.id === restroId);
+
+  if (restroIndex !== -1) {
+    restaurants[restroIndex] = {
+      id: restroId,
+      ...restroUpdatedData,
+    };
+  }
+
+  res.json({
+    message: "Restro data is updated",
+  });
 });
 
 app.listen(PORT, () => {
