@@ -21,19 +21,23 @@ app.post("/register", (req, res) => {
 
 app.put("/update/:id", (req, res) => {
   const restroUpdatedData = req.body;
-  const restroId = req.params.id;
-  const restroIndex = restaurants.findIndex((restro) => restro.id === restroId);
+  const restroId = parseInt(req.params.id);
+  const restroIndex = restaurants.findIndex((restro) => restro.id == restroId);
 
   if (restroIndex !== -1) {
     restaurants[restroIndex] = {
       id: restroId,
       ...restroUpdatedData,
     };
-  }
 
-  res.json({
-    message: "Restro data is updated",
-  });
+    res.json({
+      message: "Restro data is updated",
+    });
+  } else {
+    res.json({
+      message: "Restro id is invalid!!",
+    });
+  }
 });
 
 app.listen(PORT, () => {
